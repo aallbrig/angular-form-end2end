@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="span4">
+    <h4>Draft</h4>
+    <p>
+      {{draft | json}}
+    </p>
+    <hr>
+    <h4>Saved</h4>
+    <p>
+      {{master | json}}
+    </p>
+  </div>
+  <div class="span6">
+    <h2>What's your favorite color form</h2>
+    <form action="" novalidate ng-submit="submit()">
+      Color:
+      <select name="" id="" ng-model="draft.color">
+        <option ng-repeat="color in form.colors" value="{{color}}">{{color}}</option>
+      </select>
+      <br>
+      When did you decide you liked this color?
+      <input type="text" ng-model="draft.inputDate" ng-change="dateChanged()" maxlength="10">
+      <br>
+      Why do you like this color?
+      <br>
+      <textarea name="" id="" ng-model="draft.description" style="width: 90%" rows="3"></textarea>
+      <div class="control-group">
+        <input type="submit" class="btn btn-primary" value="submit">
+        <input type="button" ng-click="save()" class="btn btn-success" value="save">
+      </div>
+    </form>
+  </div>
+</div>
