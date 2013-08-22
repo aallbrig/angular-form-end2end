@@ -13,6 +13,11 @@
   <div class="span6">
     <h2>What's your favorite color form</h2>
     <form action="" novalidate ng-submit="submit()">
+      <div class="control-group">
+        First Name: <input type="text" ng-model="draft.name.first">
+        <br>
+        Last Name: <input type="text" ng-model="draft.name.last">
+      </div>
       Color:
       <select name="" id="" value="Select a color"ng-model="draft.color">
         <option ng-repeat="color in form.colors" value="{{color}}">{{color}}</option>
