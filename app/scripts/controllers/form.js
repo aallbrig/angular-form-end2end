@@ -14,9 +14,24 @@ angular.module('angularFormEnd2endApp')
     $scope.draft = {};
     $scope.master = {};
 
-    $scope.dateChanged = function () {
+    $scope.dateChanged = function (e) {
+      //store character for evaluation
+      // var character = String($scope.draft.inputDate).pop();
+      // console.log('character: '+character);
+      //Handler for the element
+      var element = angular.element(e)
+      console.log(element);
+      console.log('keydown: '+element.keydown());
+      console.log('id     : '+element.attr('id'));
+      
+      //format: mm/dd/yyyy
       if($scope.draft.inputDate.length == 2 || $scope.draft.inputDate.length == 5) {
-        $scope.draft.inputDate = $scope.draft.inputDate + "/";
+        /*check to see if character is not a backslash.  This works
+        **in conjunction with
+        */
+        //if(character != "/"){
+          $scope.draft.inputDate = $scope.draft.inputDate + "/";
+        //}
       }
     };
     $scope.save = function () {

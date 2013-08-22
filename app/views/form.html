@@ -14,12 +14,12 @@
     <h2>What's your favorite color form</h2>
     <form action="" novalidate ng-submit="submit()">
       Color:
-      <select name="" id="" ng-model="draft.color">
+      <select name="" id="" value="Select a color"ng-model="draft.color">
         <option ng-repeat="color in form.colors" value="{{color}}">{{color}}</option>
       </select>
       <br>
       When did you decide you liked this color?
-      <input type="text" ng-model="draft.inputDate" ng-change="dateChanged()" maxlength="10">
+      <input id="date" type="text" ng-model="draft.inputDate" ng-change="dateChanged($event)" placeholder="mm/dd/yyyy" maxlength="10">
       <br>
       Why do you like this color?
       <br>
