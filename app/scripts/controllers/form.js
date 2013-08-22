@@ -14,7 +14,8 @@ angular.module('angularFormEnd2endApp')
     $scope.draft = {};
     $scope.master = {};
 
-    $scope.dateChanged = function () {
+    $scope.dateChanged = function (e) {
+      console.log(e);
       if($scope.draft.inputDate.length == 2 || $scope.draft.inputDate.length == 5) {
         $scope.draft.inputDate = $scope.draft.inputDate + "/";
       }
